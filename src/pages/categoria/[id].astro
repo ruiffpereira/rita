@@ -1,0 +1,99 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { bodyParts } from '../../data/bodyParts';
+
+export function getStaticPaths() {
+  return bodyParts.map((part) => ({
+    params: { id: part.id },
+    props: { bodyPart: part },
+  }));
+}
+
+const { bodyPart } = Astro.props;
+
+// Placeholder gallery — replace with real images
+const galleryItems = Array.from({ length: 16 }, (_, i) => ({
+  id: i + 1,
+  src: `/images/gallery/${bodyPart.id}/work${i + 1}.jpg`,
+  alt: `${bodyPart.name} — trabalho ${i + 1}`,
+  tall: i % 4 === 1,
+}));
+---
+
+<Layout title={`Piercing de ${bodyPart.name}`} description={`Galeria de piercings de ${bodyPart.name} — PIERCE Studio Lisboa`}>
+
+  <!-- Category Hero -->
+  <section class="pt-32 pb-16 bg-(--color-dark-900) relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full blur-[120px]"
+        style="background: color-mix(in srgb, var(--color-gold-500) 5%, transparent);"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs text-gray-600 mb-10">
+        <a href="/" class="hover:text-(--color-gold-400) transition-colors">Home</a>
+        <span>/</span>
+        <a href="/#categorias" class="hover:text-(--color-gold-400) transition-colors">Categorias</a>
+        <span>/</span>
+        <span class="text-gray-400">{bodyPart.name}</span>
+      </nav>
+
+      <div class="text-center max-w-2xl mx-auto">
+        <!-- Icon -->
+        <div class="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl text-(--color-gold-400) border border-(--color-gold-500)/20"
+          style="background: color-mix(in srgb, var(--color-gold-500) 10%, transparent);">
+          {bodyPart.icon}
+        </div>
+
+        <h1 class="font-(--font-display) text-5xl sm:text-6xl font-bold text-white mb-4 leading-tight">
+          Piercing de{' '}
+          <span style="background: linear-gradient(135deg, #ffffff, var(--color-gold-500)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            {bodyPart.name}
+          </span>
+        </h1>
+        <p class="text-gray-400 text-base leading-relaxed">{bodyPart.description}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="py-16 bg-(--color-dark-800)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Masonry gallery -->
+      <div class="columns-2 sm:columns-3 lg:columns-4 gap-3 [column-gap:0.75rem]">
+        {galleryItems.map((item) => (
+          <div class="break-inside-avoid mb-3 group relative overflow-hidden rounded-xl bg-(--color-dark-700) border border-white/5 hover:border-(--color-gold-500)/30 transition-all duration-300 cursor-zoom-in">
+            <div class={item.tall ? 'aspect-[3/4]' : 'aspect-square'}>
+              <img
+                src={item.src}
+                alt={item.alt}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              />
+              <!-- Placeholder -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="text-(--color-gold-500)/10 text-4xl font-(--font-display) font-bold select-none">{item.id}</span>
+              </div>
+            </div>
+            <!-- Hover overlay -->
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center text-gray-700 text-xs mt-12">
+        Adiciona as tuas fotos em <code class="text-(--color-gold-600)">/public/images/gallery/{bodyPart.id}/</code> com os nomes work1.jpg, work2.jpg, etc.
+      </p>
+    </div>
+  </section>
+
+</Layout>

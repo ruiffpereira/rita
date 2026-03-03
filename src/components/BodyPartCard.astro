@@ -1,0 +1,36 @@
+---
+import type { BodyPart } from '../data/bodyParts';
+
+interface Props {
+  bodyPart: BodyPart;
+}
+
+const { bodyPart } = Astro.props;
+---
+
+<a
+  href={`/categoria/${bodyPart.id}`}
+  class="group flex flex-col items-center text-center p-6 rounded-2xl bg-(--color-dark-700) border border-black/8 hover:border-(--color-gold-500)/50 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+>
+  <!-- Icon circle -->
+  <div class="relative mb-4">
+    <div class="w-14 h-14 rounded-full flex items-center justify-center text-2xl text-(--color-gold-400)
+      bg-gradient-to-br from-(--color-gold-500)/15 to-(--color-gold-700)/5
+      group-hover:from-(--color-gold-500)/25 group-hover:to-(--color-gold-700)/15
+      transition-all duration-300 border border-(--color-gold-500)/10 group-hover:border-(--color-gold-500)/30">
+      {bodyPart.icon}
+    </div>
+  </div>
+
+  <h3 class="font-(--font-display) text-base font-semibold text-gray-900 mb-1 group-hover:text-(--color-gold-500) transition-colors duration-200">
+    {bodyPart.name}
+  </h3>
+  <p class="text-gray-500 text-xs leading-relaxed">{bodyPart.description}</p>
+
+  <!-- Small arrow -->
+  <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    <svg class="w-4 h-4 text-(--color-gold-400) mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </div>
+</a>
