@@ -15,20 +15,20 @@ import { bodyParts } from '../data/bodyParts';
       <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(0,0,0,.2) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.2) 1px, transparent 1px); background-size: 60px 60px;"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-(--color-gold-500)/30 mb-8" style="background: color-mix(in srgb, var(--color-gold-500) 10%, transparent);">
+      <div class="animate-fade-up delay-100 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-(--color-gold-500)/30 mb-8" style="background: color-mix(in srgb, var(--color-gold-500) 10%, transparent);">
         <span class="w-1.5 h-1.5 rounded-full bg-(--color-gold-500) animate-pulse"></span>
         <span class="text-(--color-gold-500) text-xs font-medium uppercase tracking-widest">Studio Profissional · Porto</span>
       </div>
-      <h1 class="font-(--font-display) text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-[1.05] mb-6">
+      <h1 class="animate-fade-up delay-200 font-(--font-display) text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-[1.05] mb-6">
         Arte que<br />
         <span style="background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold-600)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">vives na pele</span>
       </h1>
-      <p class="max-w-2xl mx-auto text-gray-500 text-lg sm:text-xl leading-relaxed mb-10">Somos uma piercing boutique no Porto dedicada à perfeição. Cada trabalho é único, feito com arte, precisão e os mais altos padrões de higiene.</p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <p class="animate-fade-up delay-300 max-w-2xl mx-auto text-gray-500 text-lg sm:text-xl leading-relaxed mb-10">Somos uma piercing boutique no Porto dedicada à perfeição. Cada trabalho é único, feito com arte, precisão e os mais altos padrões de higiene.</p>
+      <div class="animate-fade-up delay-400 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="/#artistas" class="w-full sm:w-auto px-8 py-4 bg-(--color-gold-500) hover:bg-(--color-gold-400) text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 uppercase tracking-wider text-sm" style="box-shadow: 0 4px 30px color-mix(in srgb, var(--color-gold-500) 30%, transparent);">Conhecer os Artistas</a>
         <a href="/#categorias" class="w-full sm:w-auto px-8 py-4 border border-(--color-gold-500)/40 hover:border-(--color-gold-500) text-gray-700 hover:text-(--color-gold-500) font-medium rounded-full transition-all duration-300 uppercase tracking-wider text-sm">Explorar Galeria</a>
       </div>
-      <div class="grid grid-cols-3 gap-6 max-w-sm mx-auto mt-20 pt-10 border-t border-black/10">
+      <div class="animate-fade-up delay-500 grid grid-cols-3 gap-6 max-w-sm mx-auto mt-20 pt-10 border-t border-black/10">
         <div><p class="font-(--font-display) text-3xl font-bold text-gray-900">4</p><p class="text-gray-400 text-xs mt-1 uppercase tracking-widest">Artistas</p></div>
         <div><p class="font-(--font-display) text-3xl font-bold text-(--color-gold-500)">738+</p><p class="text-gray-400 text-xs mt-1 uppercase tracking-widest">Trabalhos</p></div>
         <div><p class="font-(--font-display) text-3xl font-bold text-gray-900">8+</p><p class="text-gray-400 text-xs mt-1 uppercase tracking-widest">Anos</p></div>
@@ -42,12 +42,12 @@ import { bodyParts } from '../data/bodyParts';
 
   <section id="artistas" class="py-24 lg:py-32 bg-(--color-dark-800)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
+      <div class="reveal text-center mb-16">
         <p class="text-(--color-gold-500) text-xs font-medium uppercase tracking-widest mb-3">Os nossos especialistas</p>
         <h2 class="font-(--font-display) text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">Conhece os<br /><span style="background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold-600)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Artistas</span></h2>
         <p class="mt-4 text-gray-500 max-w-md mx-auto text-sm leading-relaxed">Cada artista tem a sua especialidade. Clica para ver os seus trabalhos.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {artists.map((artist) => <ArtistCard artist={artist} />)}
       </div>
     </div>
@@ -55,12 +55,12 @@ import { bodyParts } from '../data/bodyParts';
 
   <section id="categorias" class="py-24 lg:py-32 bg-(--color-dark-900)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
+      <div class="reveal text-center mb-16">
         <p class="text-(--color-gold-500) text-xs font-medium uppercase tracking-widest mb-3">Explora por zona</p>
         <h2 class="font-(--font-display) text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">Onde queres<br /><span style="background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold-600)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">o teu piercing?</span></h2>
         <p class="mt-4 text-gray-500 max-w-md mx-auto text-sm leading-relaxed">Navega pela galeria por zona do corpo e inspira-te para o teu proximo piercing.</p>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="reveal grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {bodyParts.map((part) => <BodyPartCard bodyPart={part} />)}
       </div>
     </div>
@@ -69,7 +69,7 @@ import { bodyParts } from '../data/bodyParts';
   <section id="sobre" class="py-24 lg:py-32 bg-(--color-dark-800)">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
+        <div class="reveal">
           <p class="text-(--color-gold-500) text-xs font-medium uppercase tracking-widest mb-4">Sobre nos</p>
           <h2 class="font-(--font-display) text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">Mais de 10 anos<br />a fazer arte</h2>
           <div class="space-y-4 text-gray-500 text-sm leading-relaxed">
@@ -91,7 +91,7 @@ import { bodyParts } from '../data/bodyParts';
             ))}
           </div>
         </div>
-        <div class="relative hidden lg:block">
+        <div class="reveal relative hidden lg:block">
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-4">
               <div class="aspect-[3/4] rounded-2xl bg-(--color-dark-700) border border-black/8 flex items-center justify-center"><span class="text-(--color-gold-500)/20 text-7xl font-(--font-display) font-bold select-none">P</span></div>
@@ -110,7 +110,7 @@ import { bodyParts } from '../data/bodyParts';
 
   <section class="py-24 bg-(--color-gold-500) relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none opacity-10" style="background-image: linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
-    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="reveal relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <p class="text-white/70 text-xs font-medium uppercase tracking-widest mb-4">Pronto para comecar?</p>
       <h2 class="font-(--font-display) text-4xl sm:text-5xl font-bold text-white mb-5">Marca a tua consulta</h2>
       <p class="text-white/80 text-base mb-10 max-w-lg mx-auto leading-relaxed">A primeira consulta e gratuita. Vem conhecer-nos e vamos criar juntos o teu proximo piercing de sonho.</p>
@@ -128,3 +128,24 @@ import { bodyParts } from '../data/bodyParts';
   </section>
 
 </Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          // aplica delay escalonado baseado na posição entre irmãos
+          const siblings = Array.from(el.parentElement?.querySelectorAll('.reveal') ?? []);
+          const index = siblings.indexOf(el);
+          el.style.transitionDelay = `${index * 80}ms`;
+          el.classList.add('revealed');
+          observer.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>

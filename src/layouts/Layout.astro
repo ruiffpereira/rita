@@ -8,7 +8,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'PIERCE Studio — Arte profissional de piercing em Lisboa' } = Astro.props;
+const { title, description = 'NØVA Piercing Boutique — Arte profissional de piercing no Porto' } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,6 +17,7 @@ const { title, description = 'PIERCE Studio — Arte profissional de piercing em
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#f8f6f6" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,7 +25,7 @@ const { title, description = 'PIERCE Studio — Arte profissional de piercing em
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
       rel="stylesheet"
     />
-    <title>{title} | PIERCE Studio</title>
+    <title>{title} | NØVA Piercing Boutique</title>
   </head>
   <body class="bg-(--color-dark-900) text-gray-900 min-h-screen">
     <Header />
